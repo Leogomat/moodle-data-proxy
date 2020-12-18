@@ -13,7 +13,5 @@ WORKDIR /src
 USER las2peer
 RUN ant
 
-COPY las2peer-bundle-1.0.1.jar /src/lib
-
 EXPOSE $LAS2PEER_PORT
 ENTRYPOINT ["/src/docker-entrypoint.sh"]
