@@ -5,6 +5,7 @@ import org.json.JSONObject;
 public class MoodlePost extends MoodleDataPOJO {
 	private int discussionid;
 	private int userid;
+	private int parentid;
 	private String subject;
 	private String message;
 
@@ -15,6 +16,9 @@ public class MoodlePost extends MoodleDataPOJO {
 		}
 		else {
 			this.id = postData.getInt("id");
+			if (postData.getBoolean("hasparent")) {
+				this.parentid = postData.getInt("parentid");
+			}
 		}
 		if (postData.isNull("discussionid")) {
 			logger.severe("Cannot create MoodlePost " + this.id + ": Missing discussionid!");
@@ -67,6 +71,14 @@ public class MoodlePost extends MoodleDataPOJO {
 
 	public void setDiscussionid(int discussionid) {
 		this.discussionid = discussionid;
+	}
+
+	public int getParentid() {
+		return parentid;
+	}
+
+	public void setParentid(int parentid) {
+		this.parentid = parentid;
 	}
 
 	public long getCreated() {

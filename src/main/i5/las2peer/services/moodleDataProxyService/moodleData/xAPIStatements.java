@@ -178,7 +178,7 @@ public class xAPIStatements {
 	private static JSONObject createPost(MoodlePost postData, String domainName) {
 		JSONObject object = new JSONObject();
 		object.put("id", domainName + "/mod/forum/discuss.php?d=" +
-			postData.getDiscussionid() + "#p" + postData.getId());
+			postData.getDiscussionid() + "#p" + postData.getId() + "#parent=" + postData.getParentid());
 
 		JSONObject definition = new JSONObject();
 		definition.put("type", "http://id.tincanapi.com/activitytype/forum-reply");
