@@ -124,7 +124,7 @@ public class MoodleStatementGenerator {
 					JSONArray posts = moodle.mod_forum_get_discussion_posts(discussion.getInt("discussion"));
 					for (Object postObj : posts) {
 						JSONObject post = (JSONObject) postObj;
-						if (since < post.getLong("timecreated") && post.getBoolean("hasparent")) {
+						if (since < post.getLong("timecreated")) { //  && post.getBoolean("hasparent")
 							int creatorId = post.getJSONObject("author").getInt("id");
 							MoodleUser actor = getUser(creatorId, courseID);
 							MoodlePost object = new MoodlePost(post);
