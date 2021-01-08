@@ -19,6 +19,7 @@ public class xAPIStatements {
 	public static JSONObject createActor(MoodleUser moodleUser, String moodleDomain) {
 		JSONObject actor = new JSONObject();
 		// Actor
+		actor.put("id", moodleUser.getID());
 		actor.put("objectType", "Agent");
 		actor.put("name", moodleUser.getFullname());
 
