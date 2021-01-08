@@ -24,7 +24,7 @@ public class xAPIStatements {
 
 		// Account -- new object based on the latest xAPI validation
 		JSONObject account = new JSONObject();
-		account.put("name", moodleUser.getID());
+		account.put("name", Integer.toString(moodleUser.getID()));
 		account.put("homePage", moodleDomain);
 		actor.put("account", account);
 		return actor;
