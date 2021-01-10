@@ -177,9 +177,11 @@ public class xAPIStatements {
 
 	private static JSONObject createPost(MoodlePost postData, String domainName) {
 		JSONObject object = new JSONObject();
-		String objectId = domainName + "/mod/forum/discuss.php?d=" + postData.getDiscussionid() + "#p" + postData.getId();
+		String objectId = domainName + "/mod/forum/discuss.php?d=" + postData.getDiscussionid() + "#p" + postData.getId() + "#parent=";
 		if (postData.getParentid() != 0) {
-			objectId = objectId + "#parent=" + postData.getParentid();
+			objectId = objectId + postData.getParentid();
+		} else {
+			bjectId = objectId + "null";
 		}
 		object.put("id", objectId);
 
