@@ -181,7 +181,7 @@ public class xAPIStatements {
 		if (postData.getParentid() != 0) {
 			objectId = objectId + postData.getParentid();
 		} else {
-			bjectId = objectId + "null";
+			objectId = objectId + "null";
 		}
 		object.put("id", objectId);
 
