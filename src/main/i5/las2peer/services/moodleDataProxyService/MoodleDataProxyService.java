@@ -83,7 +83,7 @@ public class MoodleDataProxyService extends RESTService {
 	private static MoodleStatementGenerator statements = null;
 	private static Context context = null;
 
-	private final static int MOODLE_DATA_STREAM_PERIOD = 60; // Every minute
+	private final static int MOODLE_DATA_STREAM_PERIOD = 10; // Every minute
 	private final static int MOODLE_USER_INFO_UPDATE_PERIOD = 15; // Every hour
 	private static long lastChecked = 0;
 	private static String email = "";
