@@ -295,11 +295,11 @@ public class MoodleDataProxyService extends RESTService {
 						//}
 
 						// handle timestamps from the future next time
-						if (checkXAPITimestamp(update) < now)
+						//if (checkXAPITimestamp(update) < now)
 							context.monitorEvent(MonitoringEvent.SERVICE_CUSTOM_MESSAGE_2, update);
-						else {
-							logger.warning("Update not being sent due to it happening in the future: " + update);
-						}
+						//else {
+						//	logger.warning("Update not being sent due to it happening in the future: " + update);
+						//}
 					}
 					logger.info("Sent " + updates.size() + " messages for course " + courseID);
 				} catch (Exception e) {
