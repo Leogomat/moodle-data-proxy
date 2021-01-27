@@ -129,7 +129,7 @@ public class MoodleStatementGenerator {
 							MoodleUser actor = getUser(creatorId, courseID);
 							MoodlePost object = new MoodlePost(post);
 							JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "replied", object,
-									moodle.getDomainName(), since);
+									since, moodle.getDomainName());
 							addStatementContextExtensions(builtStatement, creatorId, courseID);
 							forumUpdates.add(builtStatement.toString() + "***" + "8f93-ce014cf5f29f");
 						}
