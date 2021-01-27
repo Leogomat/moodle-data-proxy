@@ -116,7 +116,7 @@ public class MoodleStatementGenerator {
 					JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "posted", object,
 							moodle.getDomainName());
 					addStatementContextExtensions(builtStatement, creatorId, courseID);
-					forumUpdates.add(builtStatement.toString() + "*" + actor.getMoodleToken());
+					forumUpdates.add(builtStatement.toString() + "*" + "8f93-ce014cf5f29f");
 				}
 
 				// add new posts
@@ -131,7 +131,7 @@ public class MoodleStatementGenerator {
 							JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "replied", object,
 									moodle.getDomainName());
 							addStatementContextExtensions(builtStatement, creatorId, courseID);
-							forumUpdates.add(builtStatement.toString() + "*" + actor.getMoodleToken());
+							forumUpdates.add(builtStatement.toString() + "*" + "8f93-ce014cf5f29f");
 						}
 					}
 				}
@@ -177,12 +177,12 @@ public class MoodleStatementGenerator {
 					JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "completed", exercise, grade,
 							moodle.getDomainName());
 					addStatementContextExtensions(builtStatement, userID, courseID);
-					submissions.add(builtStatement.toString() + "*" + actor.getMoodleToken());
+					submissions.add(builtStatement.toString() + "*" + "8f93-ce014cf5f29f");
 				} else {
 					JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "submitted", exercise,
 							submission.getLong("gradedatesubmitted"), moodle.getDomainName());
 					addStatementContextExtensions(builtStatement, userID, courseID);
-					submissions.add(builtStatement.toString() + "*" + actor.getMoodleToken());
+					submissions.add(builtStatement.toString() + "*" + "8f93-ce014cf5f29f");
 				}
 			}
 		}
@@ -214,7 +214,7 @@ public class MoodleStatementGenerator {
 			JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "viewed", object,
 					event.getLong("timecreated"), overwriteName, moodle.getDomainName());
 			addStatementContextExtensions(builtStatement, userID, courseID);
-			viewEvents.add(builtStatement.toString() + "*" + actor.getMoodleToken());
+			viewEvents.add(builtStatement.toString() + "*" + "8f93-ce014cf5f29f");
 		}
 		return viewEvents;
 	}
