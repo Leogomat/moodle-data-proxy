@@ -122,13 +122,9 @@ public class MoodleStatementGenerator {
 					JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "posted", object,
 							moodle.getDomainName());
 					addStatementContextExtensions(builtStatement, creatorId, courseID);
-<<<<<<< HEAD
-					forumUpdates.add(builtStatement.toString() + "***" + "8f93-ce014cf5f29f");
-=======
 					int postID = discussion.getInt("id");
 					addPostContextExtensions(builtStatement, postID);
 					forumUpdates.add(builtStatement.toString() + "*" + actor.getMoodleToken());
->>>>>>> ef68dae030f4828fb391c3cc27a3d311517a24e6
 				}
 
 				// add new posts
@@ -143,14 +139,10 @@ public class MoodleStatementGenerator {
 							JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "replied", object,
 									since, moodle.getDomainName());
 							addStatementContextExtensions(builtStatement, creatorId, courseID);
-<<<<<<< HEAD
-							forumUpdates.add(builtStatement.toString() + "***" + "8f93-ce014cf5f29f");
-=======
 							// Add ID of parent post in context extension
 							int parentPostID = post.getInt("parentid");
 							addReplyContextExtensions(builtStatement, parentPostID);
 							forumUpdates.add(builtStatement.toString() + "*" + actor.getMoodleToken());
->>>>>>> ef68dae030f4828fb391c3cc27a3d311517a24e6
 						}
 					}
 				}
@@ -203,12 +195,12 @@ public class MoodleStatementGenerator {
 					JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "completed", exercise, grade,
 							moodle.getDomainName());
 					addStatementContextExtensions(builtStatement, userID, courseID);
-					submissions.add(builtStatement.toString() + "***" + "8f93-ce014cf5f29f");
+					submissions.add(builtStatement.toString() + "*" + actor.getMoodleToken());
 				} else {
 					JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "submitted", exercise,
 							submission.getLong("gradedatesubmitted"), moodle.getDomainName());
 					addStatementContextExtensions(builtStatement, userID, courseID);
-					submissions.add(builtStatement.toString() + "***" + "8f93-ce014cf5f29f");
+					submissions.add(builtStatement.toString() + "*" + actor.getMoodleToken());
 				}
 			}
 		}
@@ -240,7 +232,7 @@ public class MoodleStatementGenerator {
 			JSONObject builtStatement = xAPIStatements.createXAPIStatement(actor, "viewed", object,
 					event.getLong("timecreated"), overwriteName, moodle.getDomainName());
 			addStatementContextExtensions(builtStatement, userID, courseID);
-			viewEvents.add(builtStatement.toString() + "***" + "8f93-ce014cf5f29f");
+			viewEvents.add(builtStatement.toString() + "*" + actor.getMoodleToken());
 		}
 		return viewEvents;
 	}
