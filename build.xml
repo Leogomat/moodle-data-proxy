@@ -32,7 +32,6 @@
         <fileset dir="${lib}">
             <include name="**/*.jar"/>
             <exclude name="junit-*.jar"/>
-        	
         </fileset>
     	<fileset dir="${servicelib}">
     	    <include name="**/*.jar"/>
@@ -93,7 +92,6 @@
 	<target name="init_deps">
         <mkdir dir="${lib}" />
         <mkdir dir="${servicelib}" />
-		<copy todir="${lib}" file="las2peer-bundle-1.0.1.jar"/>
     </target>
 	
     <target name="init_general">
